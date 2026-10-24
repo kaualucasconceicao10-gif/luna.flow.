@@ -1,0 +1,1223 @@
+<!DOCTYPE html> 
+<html lang="pt-br"> 
+ 
+<head> 
+ 
+<meta charset="UTF-8"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+ 
+<title>LunaFlow | Entre Fases e Ciclos</title> 
+ 
+<style> 
+ 
+/* ========================= 
+   CONFIGURAÇÕES GERAIS 
+========================= */ 
+ 
+* { 
+    box-sizing: border-box; 
+    scroll-behavior: smooth; 
+} 
+ 
+body { 
+    margin: 0; 
+    font-family: 'Segoe UI', sans-serif; 
+    background: #f4fff4; 
+    color: #333; 
+} 
+ 
+ 
+/* ========================= 
+   HEADER 
+========================= */ 
+ 
+header { 
+    background: linear-gradient(135deg, #730c0c, #730c0c); 
+    color: white; 
+    text-align: center; 
+    padding: 70px 20px; 
+    animation: fadeIn 1s ease; 
+} 
+ 
+header img { 
+    width: 250px; 
+    max-width: 80%; 
+    height: auto; 
+    margin-bottom: 20px; 
+} 
+ 
+header h1 { 
+    font-size: 48px; 
+    margin: 5px 0; 
+} 
+ 
+header p { 
+    font-size: 22px; 
+    margin: 15px 0 30px; 
+} 
+ 
+ 
+/* ========================= 
+   BOTÕES 
+========================= */ 
+ 
+button { 
+    background: #f1eadd; 
+    color: #730c0c; 
+    border: none; 
+    padding: 13px 22px; 
+    border-radius: 10px; 
+    cursor: pointer; 
+    font-size: 16px; 
+    font-weight: bold; 
+    transition: 0.3s; 
+} 
+ 
+button:hover { 
+    background: #dff5df; 
+    transform: scale(1.05); 
+} 
+ 
+ 
+/* ========================= 
+   MENU 
+========================= */ 
+ 
+nav { 
+    background: #f1eadd; 
+    position: sticky; 
+    top: 0; 
+    z-index: 1000; 
+    padding: 15px; 
+    text-align: center; 
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1); 
+} 
+ 
+nav a { 
+    color: #000; 
+    margin: 0 10px; 
+    text-decoration: none; 
+    font-weight: bold; 
+    transition: 0.3s; 
+} 
+ 
+nav a:hover { 
+    color: #730c0c; 
+} 
+ 
+ 
+/* ========================= 
+   SEÇÕES 
+========================= */ 
+ 
+section { 
+    padding: 60px 8%; 
+    margin: 20px; 
+    border-radius: 18px; 
+    animation: fadeUp 1s ease; 
+} 
+ 
+section h2 { 
+    color: #730c0c; 
+    font-size: 32px; 
+    margin-bottom: 20px; 
+} 
+ 
+section p { 
+    font-size: 18px; 
+    line-height: 1.7; 
+} 
+ 
+ 
+/* ========================= 
+   SOBRE 
+========================= */ 
+ 
+.sobre { 
+    background: white; 
+} 
+ 
+.destaque { 
+    background: #f1eadd; 
+    border-left: 6px solid #730c0c; 
+    padding: 25px; 
+    border-radius: 15px; 
+    margin-top: 25px; 
+} 
+ 
+ 
+/* ========================= 
+   BENEFÍCIOS 
+========================= */ 
+ 
+.beneficios { 
+    background:  #f1eadd; 
+} 
+ 
+.beneficios-container { 
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 20px; 
+    justify-content: center; 
+} 
+ 
+.beneficio { 
+    background: white; 
+    padding: 25px; 
+    border-radius: 15px; 
+    width: 230px; 
+    text-align: center; 
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1); 
+    transition: 0.3s; 
+} 
+ 
+.beneficio:hover { 
+    transform: translateY(-8px); 
+} 
+ 
+.beneficio .icone { 
+    font-size: 40px; 
+} 
+ 
+.beneficio h3 { 
+    color: #730c0c; 
+} 
+ 
+ 
+   /* COMO FUNCIONA */ 
+   .passos { 
+       display: grid; 
+       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); 
+       gap: 20px; 
+   } 
+ 
+   .passo { 
+       background: white; 
+       padding: 25px; 
+       border-radius: 12px; 
+       text-align: center; 
+       box-shadow: 0 3px 10px rgba(0,0,0,0.08); 
+   } 
+ 
+   .passo h3 { 
+       color: #730c0c; 
+       margin-bottom: 10px; 
+   }
+ 
+ 
+/* ========================= 
+   IMPACTO 
+========================= */ 
+ 
+.impacto { 
+    background: #f1eadd; 
+} 
+ 
+.impactos { 
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 20px; 
+} 
+ 
+.impacto-card { 
+    background: white; 
+    padding: 25px; 
+    border-radius: 15px; 
+    flex: 1 1 220px; 
+    box-shadow: 0 5px 12px rgba(0,0,0,0.08); 
+} 
+ 
+.impacto-card h3 { 
+    color: #730c0c; 
+} 
+ 
+ 
+/* ========================= 
+   PESQUISA 
+========================= */ 
+ 
+.pesquisa { 
+    background: #f1eadd; 
+} 
+ 
+.pesquisa-cards { 
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 20px; 
+} 
+ 
+.pesquisa-card { 
+    background: white; 
+    padding: 25px; 
+    border-radius: 15px; 
+    flex: 1 1 280px; 
+    box-shadow: 0 5px 12px rgba(0,0,0,0.08); 
+} 
+ 
+.pesquisa-card h3 { 
+    color: #730c0c; 
+} 
+ 
+ 
+/* ========================= 
+   VOCÊ SABIA 
+========================= */ 
+ 
+.voce-sabia { 
+    background: white; 
+} 
+ 
+.curiosidade { 
+    background: #f1eadd; 
+    padding: 30px; 
+    border-radius: 15px; 
+    border-left: 6px solid #730c0c; 
+} 
+ 
+ 
+/* ========================= 
+   MATERIAIS 
+========================= */ 
+ 
+.materiais { 
+    background: #f1eadd; 
+} 
+ 
+.materiais-container { 
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 20px; 
+} 
+ 
+.material { 
+    background: white; 
+    padding: 25px; 
+    border-radius: 15px; 
+    flex: 1 1 250px; 
+    box-shadow: 0 5px 12px rgba(172, 170, 170, 0.08); 
+} 
+ 
+.material h3 { 
+    color: #730c0c; 
+} 
+
+
+/* ========================= 
+   HQ
+========================= */
+
+.hq {
+    background: #730c0c;
+    text-align: center;
+}
+
+.hq h2 {
+    color: #e6e3e3;
+}
+
+.hq p {
+    max-width: 850px;
+    margin: 15px auto 25px;
+    color: #f1eadd;
+}
+
+
+/* ========================= 
+   JOGO 
+========================= */ 
+ 
+.jogo { 
+    background: #730c0c; 
+    color: white; 
+    text-align: center; 
+} 
+ 
+.jogo h2 { 
+    color: white; 
+} 
+ 
+.jogo p { 
+    max-width: 850px; 
+    margin: 15px auto; 
+} 
+ 
+.personagens { 
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: center; 
+    gap: 15px; 
+    margin-top: 30px; 
+} 
+ 
+.personagem { 
+    background: #f1eadd; 
+    color: #730c0c; 
+    padding: 20px; 
+    border-radius: 15px; 
+    min-width: 150px; 
+    font-weight: bold; 
+    transition: 0.3s; 
+} 
+ 
+.personagem:hover { 
+    transform: translateY(-8px); 
+} 
+ 
+ 
+/* ========================= 
+   EQUIPE 
+========================= */ 
+ 
+.equipe { 
+    background: white; 
+    text-align: center; 
+} 
+ 
+.nomes { 
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: center; 
+    gap: 15px; 
+} 
+ 
+.nome { 
+    background: #f1eadd; 
+    color: #730c0c; 
+    padding: 15px 25px; 
+    border-radius: 25px; 
+    font-weight: bold; 
+} 
+ 
+ 
+/* ========================= 
+   AGRADECIMENTOS 
+========================= */ 
+ 
+.agradecimentos { 
+    background:  #f1eadd; 
+    text-align: center; 
+} 
+ 
+.agradecimentos p { 
+    max-width: 900px; 
+    margin: auto; 
+} 
+ 
+ 
+/* ========================= 
+   PERGUNTAS 
+========================= */ 
+ 
+.perguntas { 
+    background: #f1eadd; 
+} 
+ 
+.pergunta { 
+    background: white; 
+    padding: 20px; 
+    margin: 15px 0; 
+    border-radius: 12px; 
+} 
+ 
+.pergunta h3 { 
+    color: #730c0c; 
+} 
+ 
+ 
+/* ========================= 
+   CONTATO 
+========================= */ 
+ 
+.contato { 
+    background:  #f1eadd; 
+} 
+ 
+.contato-box { 
+    background: white; 
+    padding: 25px; 
+    border-radius: 15px; 
+    max-width: 650px; 
+} 
+ 
+ 
+/* ========================= 
+   FOOTER 
+========================= */ 
+ 
+footer { 
+    background: #730c0c; 
+    color: white; 
+    text-align: center; 
+    padding: 25px; 
+} 
+ 
+ 
+/* ========================= 
+   ANIMAÇÕES 
+========================= */ 
+ 
+@keyframes fadeIn { 
+ 
+    from { 
+        opacity: 0; 
+    } 
+ 
+    to { 
+        opacity: 1; 
+    } 
+ 
+} 
+ 
+@keyframes fadeUp { 
+ 
+    from { 
+        opacity: 0; 
+        transform: translateY(30px); 
+    } 
+ 
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    } 
+ 
+} 
+ 
+ 
+/* ========================= 
+   CELULAR 
+========================= */ 
+ 
+@media (max-width: 700px) { 
+ 
+    header h1 { 
+        font-size: 36px; 
+    } 
+ 
+    header p { 
+        font-size: 18px; 
+    } 
+ 
+    nav a { 
+        display: inline-block; 
+        margin: 6px; 
+    } 
+ 
+    section { 
+        padding: 40px 20px; 
+        margin: 10px; 
+    } 
+ 
+} 
+ 
+</style> 
+ 
+</head> 
+ 
+ 
+<body> 
+ 
+ 
+<!-- ========================= 
+     TOPO 
+========================= --> 
+ 
+<header> 
+ 
+    <img src="luana.png.png" alt="Logo LunaFlow"> 
+ 
+    <h1>LunaFlow</h1> 
+ 
+    <p>Entre Fases e Ciclos</p> 
+ 
+    <button onclick="conhecerProjeto()"> 
+        Conheça o projeto 
+    </button> 
+ 
+</header> 
+ 
+ 
+<!-- ========================= 
+     MENU 
+========================= --> 
+ 
+<nav> 
+ 
+    <a href="#sobre">Sobre</a> 
+ 
+    <a href="#processo">Como funciona</a> 
+ 
+    <a href="#impacto">Nosso impacto</a> 
+ 
+    <a href="#pesquisa">Pesquisa</a> 
+ 
+    <a href="#materiais">Materiais</a> 
+
+    <a href="#hq">HQ</a> 
+ 
+    <a href="#jogo">Jogo</a> 
+ 
+    <a href="#beneficios">Benefícios</a> 
+ 
+    <a href="#perguntas">FAQ</a> 
+ 
+    <a href="#equipe">Equipe</a> 
+ 
+    <a href="#contato">Contato</a> 
+ 
+</nav> 
+ 
+ 
+<!-- ========================= 
+     SOBRE 
+========================= --> 
+ 
+<section id="sobre" class="sobre"> 
+ 
+    <h2>Sobre a LunaFlow</h2> 
+ 
+    <p> 
+        A LunaFlow é um projeto que propõe a criação de 
+        absorventes sustentáveis e acessíveis utilizando 
+        resíduos da produção de cerveja artesanal, 
+        como o bagaço de malte. 
+    </p> 
+ 
+    <div class="destaque"> 
+ 
+        <h3>🌱 Nossa proposta</h3> 
+ 
+        <p> 
+            Transformar um resíduo industrial em uma 
+            possibilidade de produto de higiene de baixo 
+            custo e ecológico, buscando reduzir o impacto 
+            ambiental e contribuir para o combate à 
+            pobreza menstrual. 
+        </p> 
+ 
+    </div> 
+ 
+</section> 
+ 
+ 
+<!-- ========================= 
+     COMO FUNCIONA 
+========================= --> 
+ 
+<section id="processo" class="processo"> 
+ 
+    <h2>Como funciona?</h2> 
+ 
+    <div class="passos"> 
+ 
+        <div class="passo"> 
+ 
+            <h3>1. 🍺 Reaproveitamento</h3> 
+ 
+            <p> 
+                O bagaço de malte proveniente da produção 
+                de cerveja artesanal é reaproveitado. 
+            </p> 
+ 
+        </div> 
+ 
+ 
+        <div class="passo"> 
+ 
+            <h3>2. 🌾 Preparação</h3> 
+ 
+            <p> 
+                O resíduo pode ser transformado em farinha 
+                para ser utilizado no desenvolvimento 
+                do projeto. 
+            </p> 
+ 
+        </div> 
+ 
+ 
+        <div class="passo"> 
+ 
+            <h3>3. 💧 Testes</h3> 
+ 
+            <p> 
+                Testes preliminares indicaram boa capacidade 
+                de retenção de água e propriedades 
+                absorventes promissoras. 
+            </p> 
+ 
+        </div> 
+ 
+ 
+        <div class="passo"> 
+ 
+            <h3>4. ♻️ Desenvolvimento</h3> 
+ 
+            <p> 
+                O material é estudado para o desenvolvimento 
+                de uma alternativa sustentável para higiene 
+                menstrual. 
+            </p> 
+ 
+        </div> 
+ 
+    </div> 
+ 
+</section> 
+ 
+ 
+<!-- ========================= 
+     IMPACTO 
+========================= --> 
+ 
+<section id="impacto" class="impacto"> 
+ 
+    <h2>Nosso impacto</h2> 
+ 
+    <div class="impactos"> 
+ 
+        <div class="impacto-card"> 
+ 
+            <h3>🌎 Meio ambiente</h3> 
+ 
+            <p> 
+                Reaproveitamento de resíduos da produção 
+                de cerveja artesanal. 
+            </p> 
+ 
+        </div> 
+ 
+ 
+        <div class="impacto-card"> 
+ 
+            <h3>♻️ Sustentabilidade</h3> 
+ 
+            <p> 
+                Busca reduzir o impacto ambiental causado 
+                pelos absorventes descartáveis. 
+            </p> 
+ 
+        </div> 
+ 
+ 
+        <div class="impacto-card"> 
+ 
+            <h3>❤️ Social</h3> 
+ 
+            <p> 
+                O projeto busca contribuir para o combate 
+                à pobreza menstrual. 
+            </p> 
+ 
+        </div> 
+ 
+ 
+        <div class="impacto-card"> 
+ 
+            <h3>🌱 Futuro</h3> 
+ 
+            <p> 
+                Transformar um resíduo em uma alternativa 
+                ecológica e acessível. 
+            </p> 
+ 
+        </div> 
+ 
+    </div> 
+ 
+</section> 
+ 
+ 
+<!-- ========================= 
+     PESQUISA 
+========================= --> 
+ 
+<section id="pesquisa" class="pesquisa"> 
+ 
+    <h2>Pesquisa e Desenvolvimento</h2> 
+ 
+    <p> 
+        A LunaFlow pesquisa o aproveitamento de resíduos 
+        da produção de cerveja artesanal, especialmente 
+        o bagaço de malte, para o desenvolvimento de 
+        materiais com potencial absorvente. 
+    </p> 
+ 
+    <h3> 
+        Bagaço de malte → Preparação → Testes → Desenvolvimento 
+    </h3> 
+ 
+ 
+    <div class="pesquisa-cards"> 
+ 
+        <div class="pesquisa-card"> 
+ 
+            <h3>🩸 Descarte de absorventes</h3> 
+ 
+            <p> 
+                Pesquisa relacionada aos impactos causados 
+                pelo descarte incorreto dos absorventes. 
+            </p> 
+ 
+        </div> 
+ 
+ 
+        <div class="pesquisa-card"> 
+ 
+            <h3>🌿 Aloe vera</h3> 
+ 
+            <p> 
+                O projeto pesquisou propriedades do extrato 
+                de Aloe vera, incluindo características 
+                cicatrizantes e antibacterianas. 
+            </p> 
+ 
+        </div> 
+ 
+ 
+        <div class="pesquisa-card"> 
+ 
+            <h3>🎋 Fibra de bambu</h3> 
+ 
+            <p> 
+                A fibra de bambu foi estudada como uma 
+                alternativa sustentável e por sua capacidade 
+                de absorção de umidade. 
+            </p> 
+ 
+        </div> 
+ 
+    </div> 
+ 
+</section> 
+ 
+ 
+<!-- ========================= 
+     VOCÊ SABIA 
+========================= --> 
+ 
+<section id="voce-sabia" class="voce-sabia"> 
+ 
+    <h2>💡 Você sabia?</h2> 
+ 
+    <div class="curiosidade"> 
+ 
+        <h3>🍺 Um resíduo pode ganhar uma nova função</h3> 
+ 
+        <p> 
+            O bagaço de malte é um resíduo da produção 
+            de cerveja artesanal. A LunaFlow estuda o 
+            reaproveitamento desse material para uma 
+            proposta de produto de higiene sustentável. 
+        </p> 
+ 
+    </div> 
+ 
+</section> 
+ 
+ 
+<!-- ========================= 
+     MATERIAIS 
+========================= --> 
+ 
+<section id="materiais" class="materiais"> 
+ 
+    <h2>Nossos materiais</h2> 
+ 
+    <div class="materiais-container"> 
+ 
+ 
+        <div class="material"> 
+ 
+            <h3>🍺 Bagaço de malte</h3> 
+ 
+            <p> 
+                Principal resíduo estudado no projeto. 
+                A farinha produzida a partir do material 
+                apresentou propriedades absorventes 
+                promissoras nos testes preliminares. 
+            </p> 
+ 
+        </div> 
+ 
+ 
+        <div class="material"> 
+ 
+            <h3>🌿 Aloe vera</h3> 
+ 
+            <p> 
+                Material estudado durante a pesquisa 
+                devido às suas propriedades fitoterápicas. 
+            </p> 
+ 
+        </div> 
+ 
+ 
+        <div class="material"> 
+ 
+            <h3>🎋 Fibra de bambu</h3> 
+ 
+            <p> 
+                Pesquisada como alternativa sustentável 
+                devido às suas propriedades naturais. 
+            </p> 
+ 
+        </div> 
+ 
+ 
+    </div> 
+ 
+</section>
+
+
+<!-- =========================
+     HQ
+========================= -->
+
+<section id="hq" class="hq">
+
+    <h2>📖 Maya – Ciclo de Amor e Cuidado</h2>
+
+    <p>
+        A HQ Maya – Ciclo de Amor e Cuidado faz parte do projeto
+        LunaFlow e apresenta uma história sobre ciclo, cuidado
+        e informação de forma leve e acessível.
+    </p>
+
+    <button onclick="abrirHQ()">
+        📖 Acessar a HQ
+    </button>
+
+</section>
+ 
+ 
+<!-- ========================= 
+     BENEFÍCIOS 
+========================= --> 
+ 
+<section id="beneficios" class="beneficios"> 
+ 
+    <h2>Benefícios</h2> 
+ 
+    <div class="beneficios-container"> 
+ 
+ 
+        <div class="beneficio"> 
+ 
+            <div class="icone">🌱</div> 
+ 
+            <h3>Sustentabilidade</h3> 
+ 
+            <p> 
+                Reaproveitamento de resíduos. 
+            </p> 
+ 
+        </div> 
+ 
+ 
+        <div class="beneficio"> 
+ 
+            <div class="icone">💧</div> 
+ 
+            <h3>Absorção</h3> 
+ 
+            <p> 
+                Propriedades absorventes promissoras. 
+            </p> 
+ 
+        </div> 
+ 
+ 
+        <div class="beneficio"> 
+ 
+            <div class="icone">💰</div> 
+ 
+            <h3>Acessibilidade</h3> 
+ 
+            <p> 
+                Proposta de um produto de baixo custo. 
+            </p> 
+ 
+        </div> 
+ 
+ 
+        <div class="beneficio"> 
+ 
+            <div class="icone">🌎</div> 
+ 
+            <h3>Menos desperdício</h3> 
+ 
+            <p> 
+                Busca reduzir impactos ambientais. 
+            </p> 
+ 
+        </div> 
+ 
+ 
+        <div class="beneficio"> 
+ 
+            <div class="icone">❤️</div> 
+ 
+            <h3>Saúde e bem-estar</h3> 
+ 
+            <p> 
+                Relacionado aos objetivos de saúde e 
+                bem-estar. 
+            </p> 
+ 
+        </div> 
+ 
+ 
+    </div> 
+ 
+</section> 
+ 
+ 
+<!-- ========================= 
+     JOGO 
+========================= --> 
+ 
+<section id="jogo" class="jogo"> 
+ 
+    <h2>🎮 Reino de Hormonia</h2> 
+ 
+    <p> 
+        O reino de Hormonia está passando por mudanças 
+        misteriosas. Diferentes emoções surgem e precisam 
+        aprender a trabalhar juntas para restaurar o 
+        equilíbrio do reino. 
+    </p> 
+ 
+    <p> 
+        As personagens representam sentimentos comuns 
+        durante o período menstrual e possuem poderes 
+        únicos. 
+    </p> 
+ 
+ 
+    <div class="personagens"> 
+ 
+        <div class="personagem"> 
+            💗<br> 
+            Desejo 
+        </div> 
+ 
+        <div class="personagem"> 
+            🌸<br> 
+            TPM 
+        </div> 
+ 
+        <div class="personagem"> 
+            💭<br> 
+            Sensibilidade 
+        </div> 
+ 
+        <div class="personagem"> 
+            😴<br> 
+            Cansaço 
+        </div> 
+ 
+        <div class="personagem"> 
+            🔴<br> 
+            Cólica 
+        </div> 
+ 
+    </div> 
+ 
+
+<br>
+<button onclick="window.open('https://youtu.be/ndLN7d2MuH4', '_blank')">
+    🎮 Conhecer o jogo
+</button>
+</section>
+
+ 
+ 
+ 
+<!-- ========================= 
+     PERGUNTAS 
+========================= --> 
+ 
+<section id="perguntas" class="perguntas"> 
+ 
+    <h2>Perguntas Frequentes</h2> 
+ 
+ 
+    <div class="pergunta"> 
+ 
+        <h3>O que é a LunaFlow?</h3> 
+ 
+        <p> 
+            É um projeto que propõe o desenvolvimento 
+            de absorventes sustentáveis e acessíveis. 
+        </p> 
+ 
+    </div> 
+ 
+ 
+    <div class="pergunta"> 
+ 
+        <h3>Qual material é estudado?</h3> 
+ 
+        <p> 
+            Principalmente o bagaço de malte proveniente 
+            da produção de cerveja artesanal. 
+        </p> 
+ 
+    </div> 
+ 
+ 
+    <div class="pergunta"> 
+ 
+        <h3>Por que utilizar o bagaço de malte?</h3> 
+ 
+        <p> 
+            O projeto busca reaproveitar esse resíduo 
+            e estudar suas propriedades absorventes. 
+        </p> 
+ 
+    </div> 
+ 
+ 
+    <div class="pergunta"> 
+ 
+        <h3>Já existem testes?</h3> 
+ 
+        <p> 
+            Sim. Testes preliminares indicaram boa 
+            retenção de água e propriedades absorventes 
+            promissoras. 
+        </p> 
+ 
+    </div> 
+ 
+</section> 
+ 
+ 
+<!-- ========================= 
+     EQUIPE 
+========================= --> 
+ 
+<section id="equipe" class="equipe"> 
+ 
+    <h2>👥 Nossa equipe</h2> 
+ 
+    <p> 
+        Projeto desenvolvido por: 
+    </p> 
+ 
+ 
+    <div class="nomes"> 
+ 
+        <div class="nome"> 
+            Victoria Pereira Fernandes 
+        </div> 
+ 
+        <div class="nome"> 
+            Thiago Junio Siqueira 
+        </div> 
+ 
+        <div class="nome"> 
+            Kaua Lucas Moraes da Conceição 
+        </div> 
+ 
+        <div class="nome"> 
+            Gustavo Alves Rocha Jose 
+        </div> 
+ 
+    </div> 
+ 
+</section> 
+ 
+ 
+<!-- ========================= 
+     AGRADECIMENTOS 
+========================= --> 
+ 
+<section class="agradecimentos"> 
+ 
+    <h2>🙏 Agradecimentos</h2> 
+ 
+    <p> 
+        Agradecemos aos professores Rafael, Edmar e Oseias 
+        pelo apoio, dedicação e orientação ao longo do 
+        desenvolvimento do projeto. 
+    </p> 
+ 
+</section> 
+ 
+ 
+<!-- ========================= 
+     CONTATO 
+========================= --> 
+ 
+<section id="contato" class="contato"> 
+ 
+    <h2>📩 Contato</h2> 
+ 
+ 
+    <div class="contato-box"> 
+ 
+        <p> 
+            📧 <strong>Email:</strong> lunaflow@gmail.com 
+        </p> 
+ 
+        <p> 
+            📱 <strong>Instagram:</strong> @lunaflow 
+        </p> 
+ 
+    </div> 
+ 
+</section> 
+ 
+ 
+<!-- ========================= 
+     RODAPÉ 
+========================= --> 
+ 
+<footer> 
+ 
+    <p>© 2026 LunaFlow 🌱</p> 
+ 
+    <p>Entre Fases e Ciclos</p> 
+ 
+</footer> 
+ 
+ 
+<!-- ========================= 
+     JAVASCRIPT 
+========================= --> 
+ 
+<script> 
+ 
+function conhecerProjeto() { 
+ 
+    document.getElementById("sobre").scrollIntoView({ 
+        behavior: "smooth" 
+    }); 
+ 
+} 
+ 
+ 
+function jogar() { 
+ 
+    alert( 
+        "O Reino de Hormonia está sendo preparado! 🎮" 
+    ); 
+ 
+} 
+
+
+function abrirHQ() {
+
+    window.open(
+        "https://senac-sp-edu.my.canva.site/maya-ciclo-de-amor-e-cuidado",
+        "_blank"
+    );
+
+}
+ 
+</script> 
+ 
+ 
+</body> 
+ 
+</html>
